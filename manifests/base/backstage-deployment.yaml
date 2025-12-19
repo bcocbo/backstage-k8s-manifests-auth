@@ -17,7 +17,7 @@ spec:
     spec:
       nodeSelector:
         karpenter.sh/nodepool: spot
-      serviceAccountName: backstage-auth
+      serviceAccountName: backstage
       containers:
       - name: backstage-auth
         image: 851725646489.dkr.ecr.us-east-1.amazonaws.com/backstage-auth:main-348fedd
