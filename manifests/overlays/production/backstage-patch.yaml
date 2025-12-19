@@ -2,13 +2,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backstage
-  namespace: backstage
+  name: backstage-auth
+  namespace: backstage-auth
 spec:
   template:
     spec:
       containers:
-      - name: backstage
+      - name: backstage-auth
         resources:
           requests:
             memory: "2Gi"

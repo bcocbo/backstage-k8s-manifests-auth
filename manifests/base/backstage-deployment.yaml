@@ -39,7 +39,7 @@ spec:
         - secretRef:
             name: postgres-secrets
         - secretRef:
-            name: backstage-auth-secrets
+            name: backstage-secrets
         resources:
           requests:
             memory: "512Mi"

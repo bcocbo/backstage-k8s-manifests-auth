@@ -15,11 +15,11 @@ patchesStrategicMerge:
 
 # ESCALA LAS RÉPLICAS PARA PRODUCCIÓN
 replicas:
-- name: backstage
+- name: backstage-auth
   count: 1
 
 # REEMPLAZA LA IMAGEN DEL DEPLOYMENT BASE
 images:
-- name: backstage        # NOMBRE DEL CONTENEDOR EN EL DEPLOYMENT BASE
-  newName: YOUR_ECR_REGISTRY/backstage
+- name: backstage-auth        # NOMBRE DEL CONTENEDOR EN EL DEPLOYMENT BASE
+  newName: YOUR_ECR_REGISTRY/backstage-auth
   newTag: latest
