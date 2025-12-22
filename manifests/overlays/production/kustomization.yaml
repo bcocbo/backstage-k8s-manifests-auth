@@ -4,7 +4,7 @@ kind: Kustomization
 # "USA TODO LO QUE ESTÁ EN ../../base/"
 resources:
 - ../../base              # REFERENCIA A LA CARPETA BASE
-#- ingress.yaml
+- ingress.yaml
 
 
 
