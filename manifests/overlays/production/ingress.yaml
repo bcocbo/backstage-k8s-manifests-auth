@@ -8,7 +8,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing  # o internal para privado
     alb.ingress.kubernetes.io/target-type: ip  # Recomendado para Fargate o pods directos
     # Opcional: HTTPS con certificado ACM (reemplaza con tu ARN)
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:226633502530:certificate/e5d7f59f-deca-414b-a09a-2c96382cb6b6
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:226633502530:certificate/ad700e8a-be5a-4491-afe4-1105934e150b
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
 
