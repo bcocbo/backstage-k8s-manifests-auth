@@ -7,6 +7,7 @@ resources:
 - postgres.yaml           # Despliega PostgreSQL
 - backstage-deployment.yaml # Despliega Backstage
 - backstage-service.yaml   # Servicio de Backstage
+- harness-app-config-local.yaml
 - rbac.yaml               # Permisos RBAC
 
 secretGenerator:

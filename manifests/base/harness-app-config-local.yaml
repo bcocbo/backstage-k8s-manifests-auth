@@ -1,0 +1,12 @@
+# Configuracion extra del Backstage de la PoC Harness, montada como /app/app-config.local.yaml.
+# Permite registrar plantillas (Template) por URL.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: harness-app-config-local
+  namespace: backstage-auth
+data:
+  app-config-local.yaml: |
+    catalog:
+      rules:
+        - allow: [Component, System, API, Resource, Location, Template]

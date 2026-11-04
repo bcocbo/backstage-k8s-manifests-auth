@@ -40,6 +40,10 @@ spec:
             name: postgres-secrets
         - secretRef:
             name: backstage-secrets
+        volumeMounts:
+        - name: harness-app-config-local
+          mountPath: /app/app-config.local.yaml
+          subPath: app-config-local.yaml
         resources:
           requests:
             memory: "512Mi"
@@ -47,6 +51,10 @@ spec:
           limits:
             memory: "1Gi"
             cpu: "500m"
+      volumes:
+      - name: harness-app-config-local
+        configMap:
+          name: harness-app-config-local
       initContainers:
       - name: wait-for-postgres
         image: postgres:15-alpine
