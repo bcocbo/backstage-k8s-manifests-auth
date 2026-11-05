@@ -16,4 +16,4 @@ spec:
             ephemeral-storage: "6Gi"
           limits:
             memory: "2Gi"
-            cpu: "1000m"
+            cpu: "2000m"
