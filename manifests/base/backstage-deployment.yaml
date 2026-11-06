@@ -24,6 +24,29 @@ spec:
         ports:
         - name: http
           containerPort: 7007
+        # Backstage responde 503 en readiness si su arranque falla, aunque el proceso siga vivo.
+        # El endpoint de liveness da 200 en ese estado, por eso las tres probes usan readiness.
+        startupProbe:
+          httpGet:
+            path: /.backstage/health/v1/readiness
+            port: http
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 60
+        readinessProbe:
+          httpGet:
+            path: /.backstage/health/v1/readiness
+            port: http
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /.backstage/health/v1/readiness
+            port: http
+          periodSeconds: 30
+          timeoutSeconds: 5
+          failureThreshold: 5
         env:
         - name: NODE_ENV
           value: production
